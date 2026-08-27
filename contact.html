@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontakt - VoyaWorld</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    label, input, textarea, button {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #0066cc;
+    }
+    #responseMsg {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+      text-align: center;
+    }
+    #responseMsg.error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Na Kontaktoni</h2>
+  <form id="contactForm">
+    <label for="name">Emri:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="message">Mesazhi juaj:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Dërgo</button>
+  </form>
+
+  <div id="responseMsg"></div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        document.getElementById("responseMsg").textContent = "Ju lutem plotësoni të gjitha fushat.";
+        document.getElementById("responseMsg").classList.add('error');
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/kontakt', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+        const data = await response.json();
+
+        if (data.status === 'success') {
+          document.getElementById("responseMsg").textContent = "Mesazhi u dërgua me sukses!";
+          document.getElementById("responseMsg").classList.remove('error');
+          document.getElementById("contactForm").reset();
+        } else {
+          document.getElementById("responseMsg").textContent = data.message || "Gabim gjatë dërgimit të mesazhit.";
+          document.getElementById("responseMsg").classList.add('error');
+        }
+      } catch (err) {
+        document.getElementById("responseMsg").textContent = "Gabim në lidhjen me serverin.";
+        document.getElementById("responseMsg").classList.add('error');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f8ff;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+header {
+  background-color: #0077b6;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.logo {
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+
+.hero {
+  background-image: url(voyaworld.png); 
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 350px 350px;
+}
+
+.hero h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #00b4d8;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0077b6;
+}
+#btn-shikorezervimet {
+    background-color: #004080;  /* Blu i errët */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-shikorezervimet:hover {
+    background-color: #0066cc;  /* Blu më i hapur kur kalon mouse */
+}
+
+
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.destinations {
+  padding: 50px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.destinations h2 {
+  color: #0077b6;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.destination-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.destination {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.destination:hover {
+  transform: scale(1.03);
+}
+
+.destination img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.destination h3 {
+  margin-top: 10px;
+  color: #023e8a;
+}
+
+.destination p {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #333;
+}
+.package.hidden {
+  display: none;
+}
+
+.destination {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.package {
+  margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+.about-section {
+  padding: 60px 20px;
+  background-color: #e3f2fd;
+  color: #023e8a;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-section h3 {
+  margin-top: 30px;
+  color: #0077b6;
+}
+
+.about-section p,
+.about-section ul {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.about-section ul {
+  padding-left: 20px;
+}
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f1f1f1;
+  color: #222;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #0077b6;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.contact-form button:hover {
+  background-color: #023e8a;
+}
+
+.contact-info {
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+

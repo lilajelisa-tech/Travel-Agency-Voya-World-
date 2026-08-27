@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shiko Rezervimin Tim</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; background-color: #f2f2f2; }
+    form { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    label, input, button { display: block; margin-top: 10px; width: 100%; }
+    input { padding: 8px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 10px; background-color: #004080; color: white; border: none; cursor: pointer; font-size: 16px; border-radius: 4px; }
+    button:hover { background-color: #0066cc; }
+    #rezervimi { max-width: 500px; margin: 30px auto; padding: 20px; background: #e6f0ff; border: 1px solid #b3d1ff; border-radius: 8px; box-shadow: 0 0 5px #aaa; }
+    #rezervimi p { margin: 10px 0; font-size: 16px; color: #003366; }
+  </style>
+</head>
+<body>
+
+  <h2>Kontrollo Rezervimin</h2>
+  <form id="kontrollo-form">
+    <label for="email">Email-i:</label>
+    <input type="email" id="email" required />
+    <label for="id">Numri i ID:</label>
+    <input type="text" id="id" required />
+    <button type="submit">Shfaq Rezervimin</button>
+  </form>
+
+  <div id="rezervimi"></div>
+
+  <script>
+    document.getElementById("kontrollo-form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const id = document.getElementById("id").value.trim();
+      const rezervimiDiv = document.getElementById("rezervimi");
+
+      rezervimiDiv.textContent = "Po kërkohet rezervimi...";
+
+      try {
+        const response = await fetch(`http://localhost:3000/gjej-rezervimin?email=${encodeURIComponent(email)}&id=${encodeURIComponent(id)}`);
+        
+        if (!response.ok) {
+          rezervimiDiv.textContent = "Gabim në përgjigjen nga serveri.";
+          return;
+        }
+
+        const data = await response.json();
+
+        if (data.status === 'success') {
+          rezervimiDiv.innerHTML = `
+            <p><strong>Emri:</strong> ${data.rezervim.emri}</p>
+            <p><strong>Paketa:</strong> ${data.rezervim.paketa}</p>
+            <p><strong>Data:</strong> ${data.rezervim.data}</p>
+            <p><strong>Mesazhi:</strong> ${data.rezervim.mesazh}</p>
+            <p><strong>Pagesa:</strong> ${data.rezervim.pagesa}</p>
+          `;
+        } else {
+          rezervimiDiv.textContent = data.message;
+        }
+      } catch (error) {
+        rezervimiDiv.textContent = "Gabim gjatë lidhjes me serverin.";
+        console.error(error);
+      }
+    });
+  </script>
+
+</body>
+</html>

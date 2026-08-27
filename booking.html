@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rezervo - VoyaWorld</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container">
+      <h1 class="logo">VoyaWorld</h1>
+      <nav>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+         <li><a href="booking.html">Destinacione</a></li>
+          <li><a href="reservation.html">Rezervime</a></li>
+         <li><a href="about.html">Rreth Nesh</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<!-- Seksioni i destinacioneve -->
+<section class="destinations">
+  <div class="container">
+    <h2>Destinacionet që ofrojmë</h2>
+    <div class="destination-list">
+      <!-- Vendet -->
+      <div class="destination">
+  <img src="italy.png" alt="Itali">
+  <h3>Itali</h3>
+  <p>Eksploro Romën, Venecian dhe verën italiane me udhëtime të organizuara.</p>
+  <button class="book-btn" onclick="showPackage('italy')">Shfaq Paketën</button>
+
+  
+  <div id="package-italy" class="package hidden">
+    <h4>Paketa për Italinë</h4>
+    <ul>
+      <li><strong>Vendndodhje:</strong> Romë, Venecia, Milano</li>
+      <li><strong>Data:</strong> 10 Qershor - 17 Qershor 2025</li>
+      <li><strong>Akomodimi:</strong> Bileta avioni e perfshire ne cmim ,Transport me autobus nga Aeorporti Bergamo ne hotel.Hotel 4 yje, përfshirë mëngjes, drekë dhe darkë</li>
+      <li><strong>Përfshirë në udhëtim:</strong> Udhërrëfyes lokal ne gjuhen angleze dhe shqip, transport brenda Italisë, bileta për muzetë</li>
+      <li><strong>Rekomandime:</strong> Vishni rroba të rehatshme për ecje në qytetet historike.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="destination">
+  <img src="eiffel-tower-paris-france.jpg" alt="france">
+  <h3>Francë</h3>
+  <p>Paris, bregdeti i Azurit dhe verërat franceze presin vizitën tuaj!</p>
+  <button class="book-btn" onclick="showPackage('france')">Shfaq Paketën</button>
+
+  <div id="package-france" class="package hidden">
+    <h4>Paketa për Francën</h4>
+    <ul>
+      <li><strong>Vendndodhje:</strong> Kulla Eiffel, Arch de Triumph, Notre Damus Cathedrale</li>
+      <li><strong>Data:</strong> 2 Korrik - 6 Korrik 2025</li>
+      <li><strong>Akomodimi:</strong> Bileta avioni e përfshirë në çmim, transport me autobus nga Aeroporti Beauvais në hotel. Hotel 3 yje, përfshirë mëngjes dhe darkë</li>
+      <li><strong>Përfshirë në udhëtim:</strong> Udhërrëfyes lokal në gjuhën angleze dhe shqip, transport brenda Parisit, bileta për muzetë dhe katedralen</li>
+      <li><strong>Rekomandime:</strong> Vishni rroba të rehatshme për ecje në qytetet historike.</li>
+    </ul>
+  </div>
+</div>
+
+
+      <div class="destination">
+        <img src="spain.png" alt="Spanjë">
+        <h3>Spanjë</h3>
+        <p>Njih bullgurin, flamengon dhe plazhet e Barcelonës.</p>
+          <button class="book-btn" onclick="showPackage('spain')">Shfaq Paketën</button>
+        <div id="package-spain" class="package hidden">
+  <h4>Paketa për Spanjën</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong> Barcelona, Sevilla, Valencia</li>
+    <li><strong>Data:</strong> 15 Korrik - 20 Korrik 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje me pamje nga deti, përfshirë mëngjes dhe darkë tradicionale spanjolle</li>
+    <li><strong>Përfshirë në udhëtim:</strong> Fluturime vajtje-ardhje, transport i brendshëm me autobus luksoz, bileta për Sagrada Familia, Park Güell dhe shfaqje flamengo</li>
+    <li><strong>Rekomandime:</strong> Shijoni tapas lokale dhe merrni me vete rroba për plazh dhe veshje për mbrëmje</li>
+  </ul>
+</div>
+
+      </div>
+      <div class="destination">
+        <img src="germany.png" alt="Gjermani">
+        <h3>Gjermani</h3>
+        <p>Qytete moderne dhe histori të pasur – udhëtime kulturore dhe argëtuese.</p>
+         <button class="book-btn" onclick="showPackage('germany')">Shfaq Paketën</button>
+        <div id="package-germany" class="package hidden">
+  <h4>Paketa për Gjermani</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong> Berlin, Dredsen, Mynih</li>
+    <li><strong>Data:</strong> 2 Shtator - 7 Shtator 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje ne qender te Berlinit, përfshirë mëngjes dreke  dhe darkë </li>
+    <li><strong>Përfshirë në udhëtim:</strong> Fluturime vajtje-ardhje, transport i brendshëm me autobus luksoz, bileta për Brandenburger Tor, Reichstag dhe Memorialin e Holokaustit</li>
+    <li><strong>Rekomandime:</strong> Vishni rroba të rehatshme për ecje në qytetet historike</li>
+  </ul>
+</div>
+      </div>
+      <div class="destination">
+        <img src="greece.png" alt="Greqi">
+        <h3>Greqi</h3>
+        <p>Udhëtime në ishujt grekë, Athinë dhe kulturën antike.</p>
+ <button class="book-btn" onclick="showPackage('greece')">Shfaq Paketën</button>
+        <div id="package-greece" class="package hidden">
+  <h4>Paketa për Greqine</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong> Athine, Santorini,</li>
+    <li><strong>Data:</strong> 2 Gusht - 7 Gusht 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje ne qender te Athines, përfshirë mëngjes   dhe darkë tradicionale Greke </li>
+    <li><strong>Përfshirë në udhëtim:</strong> Fluturime vajtje-ardhje, transport i brendshëm dhe trageti, </li>
+    <li><strong>Rekomandime:</strong> Vishni rroba banjo dhe veshje te bukura per natat greke </li>
+  </ul>
+</div>
+
+      </div>
+      <div class="destination">
+        <img src="austria.png" alt="Austri">
+        <h3>Austri</h3>
+        <p>Vjenë, Salzburg dhe peizazhe magjepsëse në Alpe.</p>
+         <button class="book-btn" onclick="showPackage('austria')">Shfaq Paketën</button>
+        <div id="package-austria" class="package hidden">
+  <h4>Paketa për Austrine</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong> Viene, Salzburg,</li>
+    <li><strong>Data:</strong> 4 Shtator - 7 Shtator 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje ne qender te Vienes, përfshirë mëngjes   dhe darkë tradicionale vieneze </li>
+    <li><strong>Përfshirë në udhëtim:</strong> Fluturime vajtje-ardhje,bileta metroje 72hr, </li>
+    <li><strong>Rekomandime:</strong> Vishni rroba te rehatshme dhe te trasha . </li>
+  </ul>
+</div>
+      </div>
+      <div class="destination">
+        <img src="netherland.jpg" alt="Holandë">
+        <h3>Holandë</h3>
+        <p>Amsterdam, biçikleta dhe tulipanë – relaksohu në stilin holandez.</p>
+         <button class="book-btn" onclick="showPackage('netherland')">Shfaq Paketën</button>
+        <div id="package-netherland" class="package hidden">
+  <h4>Paketa për Hollanden</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong> Amsterdam, Rotherdam,</li>
+    <li><strong>Data:</strong> 1 Tetor - 5 Tetor 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje ne qender te Amsterdamit, përfshirë mëngjes  </li>
+    <li><strong>Përfshirë në udhëtim:</strong> Fluturime vajtje-ardhje, bileta metroje 72hr, </li>
+    <li><strong>Rekomandime:</strong> Vishni rroba  te rehatshme per te pare qytetin me te bukur te Europes </li>
+  </ul>
+</div>
+      </div>
+      <div class="destination">
+        <img src="croatia.jpg" alt="Kroaci">
+        <h3>Kroaci</h3>
+        <p>Bregdet i kristaltë dhe qytete historike si Dubrovniku.</p>
+         <button class="book-btn" onclick="showPackage('croatia')">Shfaq Paketën</button>
+        <div id="package-croatia" class="package hidden">
+  <h4>Paketa për Kroacine</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong>  Zagreb, Plitvice, Dubrovnik,</li>
+    <li><strong>Data:</strong> 3 Gusht - 10 Gusht 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje ne qender te Dubrovnik, përfshirë mëngjes   dhe darkë  </li>
+    <li><strong>Përfshirë në udhëtim:</strong> Udhetim me autobus , nisja nga termniali i Tiranes, i perfashire ne cmim dhe Trageti </li>
+    <li><strong>Rekomandime:</strong> Vishni rroba banjo dhe veshje te bukura per netet me muzike </li>
+  </ul>
+</div>
+      </div>
+      <div class="destination">
+        <img src="portugal.jpeg" alt="Portugali">
+        <h3>Portugali</h3>
+        <p>Lisbon, Porto dhe vija bregdetare të mrekullueshme.</p>
+        <button class="book-btn" onclick="showPackage('portugal')">Shfaq Paketën</button>
+        <div id="package-portugal" class="package hidden">
+  <h4>Paketa për Portugaline</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong>  Lisbone, Porto,</li>
+    <li><strong>Data:</strong> 25 Gusht - 30 Gusht 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje ne qender te Lisbones, përfshirë mëngjes   dhe darkë  </li>
+    <li><strong>Përfshirë në udhëtim:</strong> Fluturime vajtje-ardhje, bileta metroje 72hr </li>
+    <li><strong>Rekomandime:</strong> Vishni rroba  te rehatshme per te pare qytetin me te bukur ku perzihet modernja me te vjetren </li>
+  </ul>
+</div>
+        
+      </div>
+      <div class="destination">
+        <img src="swisserland.jpg" alt="Zvicër">
+        <h3>Zvicër</h3>
+        <p>Alpet, sheshet e pastra dhe trenat panoramikë alpinë.</p>
+         <button class="book-btn" onclick="showPackage('swisserland')">Shfaq Paketën</button>
+        <div id="package-swisserland" class="package hidden">
+  <h4>Paketa për Zvicren</h4>
+  <ul>
+    <li><strong>Vendndodhje:</strong>  Cyrih, Lazern,</li>
+    <li><strong>Data:</strong> 20 Shtator - 25 Shtator 2025</li>
+    <li><strong>Akomodimi:</strong> Hotel 4 yje ne qender te Lazernit, përfshirë mëngjes   </li>
+    <li><strong>Përfshirë në udhëtim:</strong> Fluturime vajtje-ardhje, bileta metroje 72hr </li>
+    <li><strong>Rekomandime:</strong> Vishni rroba  te rehatshme per te pare qytetet mw nivelinme te larte te jeteses ne Europe </li>
+  </ul>
+</div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+  <script src="script.js"></script>
+  <script>
+    function showPackage(destination) {
+      const id = 'package-' + destination;
+      const element = document.getElementById(id);
+      if (element) {
+        element.classList.toggle('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
